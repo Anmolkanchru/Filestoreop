@@ -12,7 +12,7 @@ async def handle_force_sub(bot, cmd):
         if user.status == "kicked":
             await bot.send_message(
                 chat_id=cmd.from_user.id,
-                text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/linux_repo).",
+                text="Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/MeGBotsChat).",
                 parse_mode="markdown",
                 disable_web_page_preview=True
             )
@@ -24,10 +24,10 @@ async def handle_force_sub(bot, cmd):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
+                        InlineKeyboardButton("Join Channel 🤗", url=invite_link.invite_link)
                     ],
                     [
-                        InlineKeyboardButton("🔄 Refresh 🔄", callback_data="refreshmeh")
+                        InlineKeyboardButton("Refresh", callback_data="refreshmeh")
                     ]
                 ]
             ),
@@ -37,7 +37,7 @@ async def handle_force_sub(bot, cmd):
     except Exception:
         await bot.send_message(
             chat_id=cmd.from_user.id,
-            text="Something went Wrong. Contact my [Support Group](https://t.me/linux_repo).",
+            text="Something went Wrong. Contact my [Support Group](https://t.me/MeGBotsChat).",
             parse_mode="markdown",
             disable_web_page_preview=True
         )
