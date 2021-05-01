@@ -13,7 +13,7 @@ from database import Database
 
 db = Database(Config.DATABASE_URL, Config.BOT_USERNAME)
 Bot = Client(Config.BOT_USERNAME, bot_token=Config.BOT_TOKEN, api_id=Config.API_ID, api_hash=Config.API_HASH)
-
+BOT_OWNER = Config.BOT_OWNER
 
 async def foo(bot, cmd):
     chat_id = cmd.from_user.id
@@ -101,7 +101,7 @@ async def start(bot, cmd):
 #            await cmd.reply_text(f"Something went wrong!\n\n**Error:** `{err}`")
 
 
-@Bot.on_message((filters.document | filters.video | filters.audio) & ~filters.edited & filters.user(Config.BOT_OWNER))
+@Bot.on_message((filters.document | filters.video | filters.audio) & ~filters.edited & filters.user(BOT_OWNER))
 async def main(bot, message):
     if message.chat.type == "private":
         chat_id = message.from_user.id
