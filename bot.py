@@ -304,8 +304,8 @@ async def button(bot, cmd: CallbackQuery):
                 ]
             )
         )
-     elif "close" in cb_data:
-         await update.message.delete()
+    if "close" in cb_data:
+        await cmd.message.delete()
 #    elif "aboutdevs" in cb_data:
 #        await cmd.message.edit(
 #            Config.ABOUT_DEV_TEXT,
