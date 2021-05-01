@@ -129,11 +129,9 @@ async def main(bot, message):
             file_er_id = forwarded_msg.message_id
             source_link = f"https://t.me/c/{Config.LOG_CHNL}/{file_er_id}"
             share_link = f"https://t.me/{Config.BOT_USERNAME}?start=TeluguMoviesDL_{file_er_id}"
-            await bot.send_message (
-                chat_id=Config.LOG_CHANNEL,
-                f"#PRIVATE_FILE:\n\n[{message.from_user.first_name}](tg://user?id={message.from_user.id}) Got File Link!\n\n [File Link](share_link) || [Source](source_link)",
-                parse_mode="Markdown",
-                disable_web_page_preview=True)
+            await forwarded_msg.reply_text(
+                f"#PRIVATE_FILE:\n\n[{message.from_user.first_name}](tg://user?id={message.from_user.id}) Got File Link!\n\n**File Link :** {share_url}",
+                parse_mode="Markdown", disable_web_page_preview=True)
             share_link = f"https://t.me/{Config.BOT_USERNAME}?start=TeluguMoviesDL_{file_er_id}"
             await editable.edit(
                 f"**Your File Stored in my Database!**\n\nHere is the Permanent Link of your file: {share_link} \n\nJust Click the link to get your file!",
