@@ -137,7 +137,7 @@ async def main(bot, message):
                 f"**Your File Stored in my Database!**\n\nHere is the Permanent Link of your file: {share_link} \n\nJust Click the link to get your file!",
                 parse_mode="Markdown",
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton("♂️ Open ♂️", url=share_link)]
+                    [[InlineKeyboardButton("♂️ Open ♂️", url=share_link)]]
                 ),
                 disable_web_page_preview=True
             )
